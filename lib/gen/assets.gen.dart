@@ -9,6 +9,86 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/back.svg
+  String get back => 'assets/icons/back.svg';
+
+  /// File path: assets/icons/briefcase.svg
+  String get briefcase => 'assets/icons/briefcase.svg';
+
+  /// File path: assets/icons/car_req.svg
+  String get carReq => 'assets/icons/car_req.svg';
+
+  /// File path: assets/icons/category_1.svg
+  String get category1 => 'assets/icons/category_1.svg';
+
+  /// File path: assets/icons/category_2.svg
+  String get category2 => 'assets/icons/category_2.svg';
+
+  /// File path: assets/icons/chalkboard.svg
+  String get chalkboard => 'assets/icons/chalkboard.svg';
+
+  /// File path: assets/icons/down.svg
+  String get down => 'assets/icons/down.svg';
+
+  /// File path: assets/icons/filter.svg
+  String get filter => 'assets/icons/filter.svg';
+
+  /// File path: assets/icons/garage.svg
+  String get garage => 'assets/icons/garage.svg';
+
+  /// File path: assets/icons/location.svg
+  String get location => 'assets/icons/location.svg';
+
+  /// File path: assets/icons/map.svg
+  String get map => 'assets/icons/map.svg';
+
+  /// File path: assets/icons/message.svg
+  String get message => 'assets/icons/message.svg';
+
+  /// File path: assets/icons/request.svg
+  String get request => 'assets/icons/request.svg';
+
+  /// File path: assets/icons/search.svg
+  String get search => 'assets/icons/search.svg';
+
+  /// File path: assets/icons/search_fill.svg
+  String get searchFill => 'assets/icons/search_fill.svg';
+
+  /// File path: assets/icons/sofol.svg
+  String get sofol => 'assets/icons/sofol.svg';
+
+  /// File path: assets/icons/star.svg
+  String get star => 'assets/icons/star.svg';
+
+  /// File path: assets/icons/student.svg
+  String get student => 'assets/icons/student.svg';
+
+  /// List of all assets
+  List<String> get values => [
+        back,
+        briefcase,
+        carReq,
+        category1,
+        category2,
+        chalkboard,
+        down,
+        filter,
+        garage,
+        location,
+        map,
+        message,
+        request,
+        search,
+        searchFill,
+        sofol,
+        star,
+        student
+      ];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -36,6 +116,7 @@ class $AssetsImagesGen {
 class Assets {
   Assets._();
 
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
