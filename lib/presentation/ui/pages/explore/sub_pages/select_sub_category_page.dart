@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:nagalay_flutter_skill_test/data/model/generated_model_for_category.dart';
 import 'package:nagalay_flutter_skill_test/data/model/generated_model_for_sub_category.dart';
 import 'package:nagalay_flutter_skill_test/gen/assets.gen.dart';
-import 'package:nagalay_flutter_skill_test/presentation/state/provider/filter/filtered_categories_provider.dart';
 import 'package:nagalay_flutter_skill_test/presentation/state/provider/filter/filtered_sub_categories_provider.dart';
 import 'package:nagalay_flutter_skill_test/presentation/state/provider/selection_provider.dart';
 import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
@@ -80,7 +78,7 @@ class SelectSubCategoryPage extends StatelessWidget {
   Widget _buildSubCategoryItem(SubCategory subCategory) {
     return Column(
       children: [
-        Divider(color: secondaryColor200, height: 5),
+        const Divider(color: secondaryColor200, height: 5),
         Consumer(
           builder: (context, ref, child) {
             return GestureDetector(

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:nagalay_flutter_skill_test/gen/assets.gen.dart';
 
 class MyButton extends StatelessWidget {
   final String title;

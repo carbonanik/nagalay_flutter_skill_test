@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nagalay_flutter_skill_test/gen/assets.gen.dart';
 import 'package:nagalay_flutter_skill_test/presentation/state/provider/filter/filtered_area_provider.dart';
 import 'package:nagalay_flutter_skill_test/presentation/state/provider/selection_provider.dart';

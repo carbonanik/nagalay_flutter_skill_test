@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:nagalay_flutter_skill_test/data/model/generated_model_for_area.dart';
-import 'package:nagalay_flutter_skill_test/data/model/generated_model_for_cities.dart';
 import 'package:http/http.dart' as http;
 
 class AreaDataSource {

@@ -8,7 +8,6 @@ import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_button.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_dropdown.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_svg.dart';
-import 'package:nagalay_flutter_skill_test/presentation/ui/components/no_data.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/local_component/floating_actions.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/local_component/item_view.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/sub_pages/selection_page.dart';
@@ -104,7 +103,7 @@ class ExplorePage extends StatelessWidget {
         final selection = ref.watch(selectionProvider);
         return Column(
           children: [
-            Divider(
+            const Divider(
               color: secondaryColor200,
             ),
             Padding(
@@ -151,7 +150,7 @@ class ExplorePage extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(
+            const Divider(
               color: secondaryColor200,
             ),
           ],

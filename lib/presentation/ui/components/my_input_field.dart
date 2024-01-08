@@ -29,7 +29,7 @@ class MyInputField extends StatelessWidget {
         if (labelText != null)
           Text(
             labelText!,
-            style: TextStyle(color: textColor700),
+            style: const TextStyle(color: textColor700),
           ),
         const SizedBox(height: 4),
         TextField(

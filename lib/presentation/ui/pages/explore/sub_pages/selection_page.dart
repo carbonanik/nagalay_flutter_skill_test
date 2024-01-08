@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nagalay_flutter_skill_test/gen/assets.gen.dart';
 import 'package:nagalay_flutter_skill_test/presentation/state/provider/selection_provider.dart';
-import 'package:nagalay_flutter_skill_test/presentation/state/provider/service_advertisement_provider.dart';
 import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_button.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_input_field.dart';
@@ -44,7 +41,7 @@ class SelectionPage extends ConsumerWidget {
   void _onSelectCategoryTap(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => SelectCategoryPage(),
+        builder: (context) => const SelectCategoryPage(),
       ),
     );
   }

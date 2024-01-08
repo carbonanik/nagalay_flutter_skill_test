@@ -18,8 +18,8 @@ class _FilterPageState extends State<FilterPage> {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-            SizedBox(height: 20,),
-            Row(
+            const SizedBox(height: 20,),
+            const Row(
               children: [
                 Icon(Icons.clear),
                 SizedBox(width: 20,),

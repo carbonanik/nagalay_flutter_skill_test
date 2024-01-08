@@ -54,8 +54,8 @@ class FloatingActions extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 0),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 0),
             child: SizedBox(
               height: 30,
               child: VerticalDivider(

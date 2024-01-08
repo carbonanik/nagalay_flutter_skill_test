@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_button.dart';
 
-class SelectCategoryPage extends StatelessWidget {
-  SelectCategoryPage({super.key});
+class SelectCategoryPage extends StatefulWidget {
+  const SelectCategoryPage({super.key});
 
+  @override
+  State<SelectCategoryPage> createState() => _SelectCategoryPageState();
+}
+
+class _SelectCategoryPageState extends State<SelectCategoryPage> {
   final List<String> categoryList = [
     "Category 1",
     "Category 2",

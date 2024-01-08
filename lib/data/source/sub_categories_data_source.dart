@@ -1,9 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart' show kDebugMode;
-import 'package:nagalay_flutter_skill_test/data/model/generated_model_for_category.dart' show Category;
 import 'package:http/http.dart' as http;
-import 'package:nagalay_flutter_skill_test/data/model/generated_model_for_category.dart';
 import 'package:nagalay_flutter_skill_test/data/model/generated_model_for_sub_category.dart';
 
 class SubCategoriesDataSource {
