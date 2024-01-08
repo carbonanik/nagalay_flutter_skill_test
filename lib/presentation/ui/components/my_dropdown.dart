@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
 
 class MyDropdown extends StatelessWidget {
   final List<String> items;
@@ -14,14 +15,14 @@ class MyDropdown extends StatelessWidget {
       height: 36,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
-        color: Colors.grey.shade100,
+        color: secondaryColor100,
       ),
       child: DropdownButton(
         value: value,
         padding: EdgeInsets.zero,
         icon: const Icon(Icons.keyboard_arrow_down),
-        style: TextStyle(
-          color: Colors.grey.shade700,
+        style: const TextStyle(
+          color: textColor700,
           // fontWeight: FontWeight.w600,
           fontSize: 14,
         ),

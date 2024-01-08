@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nagalay_flutter_skill_test/data/model/generated_models_for_advertisements.dart';
 import 'package:nagalay_flutter_skill_test/gen/assets.gen.dart';
+import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
+import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/local_component/item_view_image_slider.dart';
 
 class ItemView extends StatelessWidget {
-  const ItemView({super.key});
+  final Advertisement advertisement;
+  final bool deepShadow;
+
+  const ItemView({
+    required this.advertisement,
+    this.deepShadow = false,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +26,9 @@ class ItemView extends StatelessWidget {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.shade100,
+              color: deepShadow ? textColor700 : secondaryColor100,
               spreadRadius: 3,
-              blurRadius: 3,
+              blurRadius: deepShadow ? 10 : 3,
               offset: const Offset(0, 3),
             ),
           ],
@@ -27,10 +37,7 @@ class ItemView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // image slider
-            Image.asset(
-              Assets.images.placeHolder1.path,
-              width: 110,
-            ),
+            const ItemViewImageSlider(),
             const SizedBox(width: 10),
             Expanded(child: _buildDetails()),
             // details
@@ -51,20 +58,22 @@ class ItemView extends StatelessWidget {
             children: [
               const SizedBox(height: 8),
               // title
-              const Text(
-                'Learn Database engineering',
+              Text(
+                // 'Learn Database engineering',
+                advertisement.title ?? 'Title not found',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black87,
+                  color: textColor700,
                 ),
               ),
               const SizedBox(height: 8),
               // tag & location
               Row(
                 children: [
+                  // Tag // category
                   Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 6,
@@ -72,59 +81,43 @@ class ItemView extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      color: Colors.grey.shade300,
+                      color: secondaryColor200,
                     ),
-                    child: const Text('Development',
-                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.black54)),
+                    child: Text(
+                      // 'Development',
+                      advertisement.subCategory?.name ?? 'Category not found',
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: textColor700,
+                      ),
+                    ),
                   ),
                   const SizedBox(width: 10),
                   SvgPicture.asset(
                     Assets.icons.location,
                     colorFilter: const ColorFilter.mode(
-                      Colors.black54,
+                      textColor700,
                       BlendMode.srcIn,
                     ),
                   ),
-                  const Expanded(
+                  Expanded(
                     child: Text(
-                      'Gazipur, Dhaka, Bangladesh',
-                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black54),
+                      // 'Gazipur, Dhaka, Bangladesh',
+                      advertisement.address?.location?.addressText ?? 'Location not found',
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: textColor700,
+                      ),
                       overflow: TextOverflow.ellipsis,
                     ),
                   )
                 ],
               ),
               const SizedBox(height: 8),
-              Row(
-                children: [
-                  // icon
-                  SvgPicture.asset(Assets.icons.student,
-                      colorFilter: const ColorFilter.mode(
-                        Colors.black54,
-                        BlendMode.srcIn,
-                      )),
-                  const SizedBox(width: 10),
-                  const Text('20 Students',
-                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black54)),
-                  const SizedBox(width: 10),
-                  SvgPicture.asset(
-                    Assets.icons.chalkboard,
-                    colorFilter: const ColorFilter.mode(
-                      Colors.black54,
-                      BlendMode.srcIn,
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  const Text(
-                    'Online',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black54,
-                    ),
-                  )
-                ],
-              ),
+              // service detail
+              _buildServiceDetail(),
             ],
           ),
           const SizedBox(height: 26),
@@ -147,7 +140,7 @@ class ItemView extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
-                      color: Colors.black87,
+                      color: textColor700,
                     ),
                   ),
                   const SizedBox(width: 5),
@@ -156,17 +149,19 @@ class ItemView extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
-                      color: Colors.black54,
+                      color: textColor700,
                     ),
                   ),
                 ],
               ),
-              const Text(
-                '\$10',
-                style: TextStyle(
+              Text(
+                advertisement.providerType == "SERVICE_PROVIDER"
+                    ? '\$${advertisement.price?.hourly}/h'
+                    : '\$${advertisement.price?.monthly}',
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
-                  color: Colors.black87,
+                  color: textColor700,
                 ),
               ),
             ],
@@ -174,6 +169,56 @@ class ItemView extends StatelessWidget {
           // const SizedBox(height: 10),
         ],
       ),
+    );
+  }
+
+  Row _buildServiceDetail() {
+    bool serviceProvider = advertisement.providerType == "SERVICE_PROVIDER";
+    bool isOnline = advertisement.serviceProviderType == "ONLINE";
+    return Row(
+      children: [
+        // icon
+        serviceProvider
+            ? const Icon(
+                Icons.home_repair_service_outlined,
+                size: 20,
+                color: textColor700,
+              )
+            : SvgPicture.asset(
+                Assets.icons.student,
+                colorFilter: const ColorFilter.mode(
+                  textColor700,
+                  BlendMode.srcIn,
+                ),
+              ),
+        const SizedBox(width: 10),
+        Text(
+          // '20 Students',
+          serviceProvider ? 'Service' : '${advertisement.studentCapacity} Students',
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+            color: textColor700,
+          ),
+        ),
+        const SizedBox(width: 10),
+        SvgPicture.asset(
+          Assets.icons.chalkboard,
+          colorFilter: const ColorFilter.mode(
+            textColor700,
+            BlendMode.srcIn,
+          ),
+        ),
+        const SizedBox(width: 10),
+        Text(
+          isOnline ? 'Online' : 'Offline',
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+            color: textColor700,
+          ),
+        )
+      ],
     );
   }
 }

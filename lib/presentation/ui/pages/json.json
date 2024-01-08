@@ -1,0 +1,774 @@
+{
+  "content": [
+    {
+      "id": "6598fe19fca3361c8d96162b",
+      "title": "TITLE FOR YOUR PROPERTY TITLE FOR YOUR PROPERTY TITLE FOR YOUR PROPERTY STREET ADDRESS SIZE MUST BE BETWEEN 1 TO 100 CHARACTER.STREET ADDRESS",
+      "slug": "title-for-your-property-title-for-your-property-title-for-your-property-street-address-size-must-be-between-1-to-100-character.street-address-1",
+      "primaryCategory": "SOFOL",
+      "subCategory": {
+        "name": "ARTS & CULTURE",
+        "image": "/property-types-enterprise/489604513571952-876c4455-ce17-4e73-9285-4b7205a2e8cf876c4455-ce17-4e73-9285-4b7205a2e8cf.jpg",
+        "active": true
+      },
+      "nicheCategory": {
+        "name": "Drawing & Painting",
+        "subCategoryId": "655490b838619a1a2cedc53f",
+        "image": "",
+        "active": true
+      },
+      "address": {
+        "division": {
+          "divisionName": "Dhaka"
+        },
+        "district": {
+          "districtName": "Dhaka"
+        },
+        "policeStation": {
+          "policeStationName": "Badda Thana"
+        },
+        "streetAddress": "Title for your Property Title for your Property Title for your Property asds",
+        "city": "Middle Badda",
+        "area": "Bou Bazar",
+        "zipCode": 1230,
+        "country": "Bangladesh",
+        "location": {
+          "addressText": "QCF5+6H8, Dhaka 1212, Bangladesh",
+          "longitude": 90.40906503710937,
+          "latitude": 23.773091574565136
+        }
+      },
+      "lastSavedStep": "STEP5",
+      "advertisementStatus": "APPROVED",
+      "description": "Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.aaaaaaaaaa",
+      "providerType": "SERVICE_PROVIDER",
+      "serviceProviderType": "ONLINE",
+      "isWorkInWeekends": true,
+      "studentCapacity": 0,
+      "classPerWeek": 0,
+      "hoursPerWeek": 40,
+      "shiftingTimes": [
+        {
+          "shiftFrom": "01:00:00",
+          "shiftTo": "14:05:00"
+        }
+      ],
+      "amenityGroups": [
+        {
+          "title": "ARTS & CULTURE Amenities",
+          "amenities": [
+            {
+              "name": "TEST 1",
+              "icon": null,
+              "active": false
+            },
+            {
+              "name": "TEST",
+              "icon": null,
+              "active": false
+            },
+            {
+              "name": "24/7 Support",
+              "icon": null,
+              "active": false
+            },
+            {
+              "name": "Safety Ensured",
+              "icon": null,
+              "active": false
+            }
+          ],
+          "active": false
+        }
+      ],
+      "weekDays": [
+        "MONDAY",
+        "SUNDAY",
+        "TUESDAY",
+        "WEDNESDAY",
+        "THURSDAY"
+      ],
+      "offDays": [
+        "SATURDAY",
+        "FRIDAY"
+      ],
+      "propertyRulesAndPolicy": "Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.Street address size must be between 1 to 100 character.1111111111",
+      "price": {
+        "hourly": 500.0,
+        "daily": 5000.0,
+        "weekend": 15000.0,
+        "weekly": 30000.0,
+        "monthly": 200000.0
+      },
+      "overallSpecialPrice": {
+        "hourly": 450.0,
+        "daily": 4500.0,
+        "weekend": 12000.0,
+        "weekly": 25000.0,
+        "monthly": 150000.0
+      },
+      "minBooking": {
+        "bookingType": "HOUR",
+        "minBookingTime": 2
+      },
+      "discounts": [
+        {
+          "discountType": "FLAT",
+          "bookingType": "WEEK",
+          "flatPrice": 33.0,
+          "percent": 0,
+          "minBookingTime": 30
+        }
+      ],
+      "specialPrices": [],
+      "additionalFees": [
+        {
+          "name": "test",
+          "amount": 50.0
+        }
+      ],
+      "cancellationPenalties": [],
+      "photos": [],
+      "galleryUploads": [
+        {
+          "type": "IMAGE",
+          "category": "SOFOL",
+          "path": "984f695b-090f-48f1-9394-a63aa361f356984f695b-090f-48f1-9394-a63aa361f356.png"
+        }
+      ],
+      "avgRating": 0.0,
+      "totalReview": 0,
+      "revenue": 0.0,
+      "verified": true,
+      "disabled": false,
+      "paid": false,
+      "publishable": true,
+      "phone": "",
+      "email": "",
+      "contactInfo": "",
+      "advStatusHistory": [
+        {
+          "advStatus": "PENDING",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": {
+            "userId": 5,
+            "fullName": "Jamal saheb",
+            "primaryPhoneNumber": "+8801772064629",
+            "email": "jamalweb007@gmail.com",
+            "profilePicture": null,
+            "gender": null,
+            "profileImage": "3a8d5e19-9ba7-4cfb-8f26-b80a0911f67a3a8d5e19-9ba7-4cfb-8f26-b80a0911f67a.jpg"
+          },
+          "createdAt": 1704527487153
+        }
+      ],
+      "createdBy": {
+        "userId": 5,
+        "fullName": "Jamal saheb",
+        "primaryPhoneNumber": "+8801772064629",
+        "email": "jamalweb007@gmail.com",
+        "profilePicture": null,
+        "gender": null,
+        "profileImage": "3a8d5e19-9ba7-4cfb-8f26-b80a0911f67a3a8d5e19-9ba7-4cfb-8f26-b80a0911f67a.jpg"
+      },
+      "updatedBy": {
+        "userId": 5,
+        "fullName": "Jamal saheb",
+        "primaryPhoneNumber": null,
+        "email": null,
+        "profileImage": null
+      },
+      "createdAt": 1704525337104,
+      "updatedAt": 1704527487138
+    },
+    {
+      "id": "65982e74ded60755d45c5d97",
+      "title": "NEWG WEB DEVELOPMENTS",
+      "slug": "newg-web-developments-1",
+      "primaryCategory": "SOFOL",
+      "subCategory": {
+        "name": "DEVELOPMENT",
+        "image": "",
+        "active": true
+      },
+      "nicheCategory": {
+        "name": "Web Development",
+        "subCategoryId": "6554aead38619a1a2cedc547",
+        "image": "",
+        "active": true
+      },
+      "address": {
+        "division": {
+          "divisionName": "Dhaka"
+        },
+        "district": {
+          "districtName": "Dhaka"
+        },
+        "policeStation": {
+          "policeStationName": "Badda Thana"
+        },
+        "streetAddress": "TA 52/8 floor 6",
+        "city": "Middle Badda",
+        "area": "Bou Bazar",
+        "zipCode": 1230,
+        "country": "Bangladesh",
+        "location": {
+          "addressText": "Badda High School, Road Number 1, Dhaka",
+          "longitude": 90.42138589999999,
+          "latitude": 23.7793101
+        }
+      },
+      "lastSavedStep": "STEP5",
+      "advertisementStatus": "APPROVED",
+      "description": "We specialize in creating professional websites and offering tailored web solutions. Our team prioritizes design, functionality, and user experience, ensuring your online presence resonates with your brand and drives success.",
+      "providerType": "SERVICE_PROVIDER",
+      "serviceProviderType": "OFFLINE",
+      "isWorkInWeekends": true,
+      "studentCapacity": 0,
+      "classPerWeek": 0,
+      "hoursPerWeek": 40,
+      "shiftingTimes": [
+        {
+          "shiftFrom": "12:00:00",
+          "shiftTo": "00:00:00"
+        }
+      ],
+      "amenityGroups": [
+        {
+          "title": "DEVELOPMENT Amenities",
+          "amenities": [
+            {
+              "name": "Expert People",
+              "icon": null,
+              "active": false
+            },
+            {
+              "name": "Instant Chat",
+              "icon": null,
+              "active": false
+            },
+            {
+              "name": "Professional Services",
+              "icon": null,
+              "active": false
+            },
+            {
+              "name": "24/7 Support",
+              "icon": null,
+              "active": false
+            },
+            {
+              "name": "Safety Ensured",
+              "icon": null,
+              "active": false
+            }
+          ],
+          "active": false
+        }
+      ],
+      "weekDays": [
+        "FRIDAY",
+        "SATURDAY",
+        "SUNDAY",
+        "MONDAY",
+        "TUESDAY",
+        "WEDNESDAY",
+        "THURSDAY"
+      ],
+      "offDays": [],
+      "propertyRulesAndPolicy": null,
+      "price": {
+        "hourly": 500.0,
+        "daily": 5000.0,
+        "weekend": 0.0,
+        "weekly": 30000.0,
+        "monthly": 200000.0
+      },
+      "overallSpecialPrice": {
+        "hourly": 450.0,
+        "daily": 4500.0,
+        "weekend": 0.0,
+        "weekly": 25000.0,
+        "monthly": 0.0
+      },
+      "minBooking": {
+        "bookingType": "DAY",
+        "minBookingTime": 1
+      },
+      "discounts": [],
+      "specialPrices": [],
+      "additionalFees": [],
+      "cancellationPenalties": [],
+      "photos": [],
+      "galleryUploads": [
+        {
+          "type": "IMAGE",
+          "category": "SOFOL",
+          "path": "031f3dc6-ea76-44ab-8c4e-1bed9473a2de031f3dc6-ea76-44ab-8c4e-1bed9473a2de.png"
+        }
+      ],
+      "avgRating": 5.0,
+      "totalReview": 1,
+      "revenue": 0.0,
+      "verified": true,
+      "disabled": false,
+      "paid": false,
+      "publishable": true,
+      "phone": "",
+      "email": "",
+      "contactInfo": "",
+      "advStatusHistory": [
+        {
+          "advStatus": "PENDING",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": {
+            "userId": 5,
+            "fullName": "Jamal saheb",
+            "primaryPhoneNumber": "+8801772064629",
+            "email": "jamalweb007@gmail.com",
+            "profilePicture": null,
+            "gender": null,
+            "profileImage": "3a8d5e19-9ba7-4cfb-8f26-b80a0911f67a3a8d5e19-9ba7-4cfb-8f26-b80a0911f67a.jpg"
+          },
+          "createdAt": 1704472669913
+        }
+      ],
+      "createdBy": {
+        "userId": 5,
+        "fullName": "Jamal saheb",
+        "primaryPhoneNumber": "+8801772064629",
+        "email": "jamalweb007@gmail.com",
+        "profilePicture": null,
+        "gender": null,
+        "profileImage": "3a8d5e19-9ba7-4cfb-8f26-b80a0911f67a3a8d5e19-9ba7-4cfb-8f26-b80a0911f67a.jpg"
+      },
+      "updatedBy": {
+        "userId": 5,
+        "fullName": "Jamal saheb",
+        "primaryPhoneNumber": null,
+        "email": null,
+        "profileImage": null
+      },
+      "createdAt": 1704472180298,
+      "updatedAt": 1704472669897
+    },
+    {
+      "id": "6594e7ebdf46f6472da5ffb0",
+      "title": "DIGITAL MARKETING TRAINING",
+      "slug": "digital-marketing-training-1",
+      "primaryCategory": "SOFOL",
+      "subCategory": {
+        "name": "MARKETING",
+        "image": "",
+        "active": true
+      },
+      "nicheCategory": {
+        "name": "Digital Marketing",
+        "subCategoryId": "6554aeb838619a1a2cedc548",
+        "image": "",
+        "active": true
+      },
+      "address": {
+        "division": {
+          "divisionName": "Dhaka"
+        },
+        "district": {
+          "districtName": "Dhaka"
+        },
+        "policeStation": {
+          "policeStationName": "Uttara Thana"
+        },
+        "streetAddress": "1324 Uttara",
+        "city": "Uttara",
+        "area": "Uttara",
+        "zipCode": 1230,
+        "country": "Bangladesh",
+        "location": {
+          "addressText": "Dhaka",
+          "longitude": 90.4152376,
+          "latitude": 23.804093
+        }
+      },
+      "lastSavedStep": "STEP5",
+      "advertisementStatus": "APPROVED",
+      "description": "Book your stay with Thako, whether it's a hotel, single room, studio apartment, resort, or student hostel. With Thako, you can also become a host and earn money by listing your unused properties. Stay or earn it’s your call.",
+      "providerType": "TEACHER",
+      "serviceProviderType": "BOTH",
+      "isWorkInWeekends": true,
+      "studentCapacity": 5,
+      "classPerWeek": 5,
+      "hoursPerWeek": 0,
+      "shiftingTimes": [
+        {
+          "shiftFrom": "10:00:00",
+          "shiftTo": "11:00:00"
+        }
+      ],
+      "amenityGroups": [
+        {
+          "title": "MARKETING Amenities",
+          "amenities": [],
+          "active": false
+        }
+      ],
+      "weekDays": [
+        "FRIDAY",
+        "SATURDAY",
+        "SUNDAY",
+        "MONDAY",
+        "TUESDAY",
+        "WEDNESDAY",
+        "THURSDAY"
+      ],
+      "offDays": [],
+      "propertyRulesAndPolicy": null,
+      "price": {
+        "hourly": 1000.0,
+        "daily": 1500.0,
+        "weekend": 0.0,
+        "weekly": 2000.0,
+        "monthly": 2500.0
+      },
+      "overallSpecialPrice": {
+        "hourly": 500.0,
+        "daily": 1000.0,
+        "weekend": 0.0,
+        "weekly": 1500.0,
+        "monthly": 2000.0
+      },
+      "minBooking": {
+        "bookingType": "DAY",
+        "minBookingTime": 1
+      },
+      "discounts": [
+        {
+          "discountType": "FLAT",
+          "bookingType": "HOUR",
+          "flatPrice": 100.0,
+          "percent": 0,
+          "minBookingTime": 1
+        }
+      ],
+      "specialPrices": [],
+      "additionalFees": [
+        {
+          "name": "Offer",
+          "amount": 50.0
+        }
+      ],
+      "cancellationPenalties": [],
+      "photos": [],
+      "galleryUploads": [
+        {
+          "type": "IMAGE",
+          "category": "SOFOL",
+          "path": "2e2eeea2-1dde-4528-b7ed-86685191901f2e2eeea2-1dde-4528-b7ed-86685191901f.png"
+        }
+      ],
+      "avgRating": 5.0,
+      "totalReview": 1,
+      "revenue": 0.0,
+      "verified": true,
+      "disabled": false,
+      "paid": false,
+      "publishable": true,
+      "phone": "",
+      "email": "",
+      "contactInfo": "",
+      "advStatusHistory": [
+        {
+          "advStatus": "PENDING",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": {
+            "userId": 12,
+            "fullName": "Amin Bepari Khan",
+            "primaryPhoneNumber": "+8801627140987",
+            "email": "nagalaymarketing@gmail.com",
+            "profilePicture": null,
+            "gender": null,
+            "profileImage": "e8a15b46-4ec7-4524-9492-4b9b4df79127e8a15b46-4ec7-4524-9492-4b9b4df79127.png"
+          },
+          "createdAt": 1704257653116
+        }
+      ],
+      "createdBy": {
+        "userId": 12,
+        "fullName": "Amin Bepari Khan",
+        "primaryPhoneNumber": "+8801627140987",
+        "email": "nagalaymarketing@gmail.com",
+        "profilePicture": null,
+        "gender": null,
+        "profileImage": "e8a15b46-4ec7-4524-9492-4b9b4df79127e8a15b46-4ec7-4524-9492-4b9b4df79127.png"
+      },
+      "updatedBy": {
+        "userId": 12,
+        "fullName": "Amin Bepari Khan",
+        "primaryPhoneNumber": null,
+        "email": null,
+        "profileImage": null
+      },
+      "createdAt": 1704257515176,
+      "updatedAt": 1704257653094
+    },
+    {
+      "id": "6568472fe65488721fd1990c",
+      "title": "SELECT THE CATEGORY",
+      "slug": "select-the-category-1",
+      "primaryCategory": "SOFOL",
+      "subCategory": {
+        "name": "Design",
+        "image": "",
+        "active": true
+      },
+      "nicheCategory": {
+        "name": "Graphic Design",
+        "subCategoryId": "6554941b38619a1a2cedc541",
+        "image": "",
+        "active": true
+      },
+      "address": {
+        "division": {
+          "divisionName": "Barishal"
+        },
+        "district": {
+          "districtName": "Barishal"
+        },
+        "policeStation": {
+          "policeStationName": "Barishal Sodor Thana"
+        },
+        "streetAddress": "Degree more Naogaon sadar",
+        "city": "Naogaon",
+        "area": "dhaka",
+        "zipCode": 6530,
+        "country": "Bangladesh",
+        "location": {
+          "addressText": "Dhanmondi, Dhaka",
+          "longitude": 90.3742307,
+          "latitude": 23.7461495
+        }
+      },
+      "lastSavedStep": "STEP5",
+      "advertisementStatus": "APPROVED",
+      "description": "Lorem ipsum dolor sit amet consectetur adipiscing, elit curabitur litora felis iaculis convallis hac, ultricies magna mattis nunc ut. Nam netus semper platea pulvinar ullamcorper lectus tortor, aenean felis praesent tempor vehicula fringilla, molestie ligula diam nostra enim fusce. Phasellus facilisi est luctus gravida dis ante maecenas, pe",
+      "providerType": "BOTH",
+      "serviceProviderType": "BOTH",
+      "isWorkInWeekends": false,
+      "studentCapacity": 10,
+      "classPerWeek": 5,
+      "hoursPerWeek": 10,
+      "shiftingTimes": [
+        {
+          "shiftFrom": "07:00:00",
+          "shiftTo": "07:00:00"
+        }
+      ],
+      "amenityGroups": [
+        {
+          "title": "Design Amenities",
+          "amenities": [],
+          "active": false
+        }
+      ],
+      "weekDays": [
+        "FRIDAY",
+        "SATURDAY",
+        "SUNDAY",
+        "MONDAY",
+        "TUESDAY",
+        "WEDNESDAY",
+        "THURSDAY"
+      ],
+      "offDays": [],
+      "propertyRulesAndPolicy": null,
+      "price": {
+        "hourly": 400.0,
+        "daily": 700.0,
+        "weekend": 0.0,
+        "weekly": 5000.0,
+        "monthly": 12000.0
+      },
+      "overallSpecialPrice": {
+        "hourly": 350.0,
+        "daily": 600.0,
+        "weekend": 0.0,
+        "weekly": 4000.0,
+        "monthly": 10000.0
+      },
+      "minBooking": {
+        "bookingType": "DAY",
+        "minBookingTime": 0
+      },
+      "discounts": [],
+      "specialPrices": [],
+      "additionalFees": [],
+      "cancellationPenalties": [],
+      "photos": [],
+      "galleryUploads": [
+        {
+          "type": "IMAGE",
+          "category": "SOFOL",
+          "path": "c7a3f291-8f59-4f37-8a9c-b76d1f1263aec7a3f291-8f59-4f37-8a9c-b76d1f1263ae.webp"
+        }
+      ],
+      "avgRating": 0.0,
+      "totalReview": 0,
+      "revenue": 0.0,
+      "verified": true,
+      "disabled": false,
+      "paid": false,
+      "publishable": true,
+      "phone": "",
+      "email": "",
+      "contactInfo": "",
+      "advStatusHistory": [
+        {
+          "advStatus": "PENDING",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": null,
+          "createdAt": 0
+        },
+        {
+          "advStatus": "APPROVED",
+          "createdBy": {
+            "userId": 2,
+            "fullName": "Amanullha Zoha",
+            "primaryPhoneNumber": "+8801715378419",
+            "email": "amanullhazoha3784@gmail.com",
+            "profilePicture": null,
+            "gender": null,
+            "profileImage": "677de013-df80-4f88-900e-8f888abf8868677de013-df80-4f88-900e-8f888abf8868.png"
+          },
+          "createdAt": 1702540922490
+        }
+      ],
+      "createdBy": {
+        "userId": 2,
+        "fullName": "Amanullha Zoha",
+        "primaryPhoneNumber": "+8801754310604",
+        "email": "amanullhazoha3784@gmail.com",
+        "profilePicture": null,
+        "gender": null,
+        "profileImage": "677de013-df80-4f88-900e-8f888abf8868677de013-df80-4f88-900e-8f888abf8868.png"
+      },
+      "updatedBy": {
+        "userId": 2,
+        "fullName": "amanullhazoha3784@gmail.com",
+        "primaryPhoneNumber": null,
+        "email": null,
+        "profileImage": null
+      },
+      "createdAt": 1701332783815,
+      "updatedAt": 1702540922473
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 10,
+    "unpaged": false,
+    "paged": true
+  },
+  "totalPages": 1,
+  "totalElements": 4,
+  "last": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "numberOfElements": 4,
+  "first": true,
+  "empty": false
+}

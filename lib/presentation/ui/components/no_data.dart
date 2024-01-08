@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
 
 class NoData extends StatelessWidget {
   const NoData({super.key});
@@ -14,7 +15,7 @@ class NoData extends StatelessWidget {
             style: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
-              color: Colors.grey,
+              color: textColor500,
             ),
           ),
           SizedBox(
@@ -22,7 +23,7 @@ class NoData extends StatelessWidget {
           ),
           Icon(
             Icons.sentiment_dissatisfied,
-            color: Colors.grey,
+            color: textColor500,
             size: 40,
           ),
         ],

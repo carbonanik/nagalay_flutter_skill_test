@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nagalay_flutter_skill_test/gen/assets.gen.dart';
+import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
 
 class FloatingActions extends StatelessWidget {
   final void Function() onFilter;
-  final void Function() onSearch;
+  final void Function() onMap;
 
   const FloatingActions({
     required this.onFilter,
-    required this.onSearch,
+    required this.onMap,
     super.key,
   });
 
@@ -27,7 +28,7 @@ class FloatingActions extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TextButton(
-            onPressed: () {},
+            onPressed: onFilter,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
@@ -58,13 +59,13 @@ class FloatingActions extends StatelessWidget {
             child: SizedBox(
               height: 30,
               child: VerticalDivider(
-                color: Colors.grey.shade300,
+                color: secondaryColor200,
                 width: 10,
               ),
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: onMap,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
