@@ -19,6 +19,8 @@
 
 ## Getting Started
 
+Make sure you have Flutter and Dart installed on your machine. If not, you can download and install them from the official Flutter website: [Flutter Installation Guide](https://flutter.dev/docs/get-started/install)
+
 1. Clone the repository to your local machine:
 
     ```bash
