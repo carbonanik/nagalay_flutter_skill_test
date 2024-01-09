@@ -8,8 +8,22 @@ import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_input_field.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_svg.dart';
 
-class SelectCityPage extends StatelessWidget {
+class SelectCityPage extends ConsumerStatefulWidget {
   const SelectCityPage({super.key});
+
+  @override
+  ConsumerState<SelectCityPage> createState() => _SelectCityPageState();
+}
+
+class _SelectCityPageState extends ConsumerState<SelectCityPage> {
+
+  final TextEditingController _textEditingController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _textEditingController.text = ref.read(cityFilterStringProvider);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +44,7 @@ class SelectCityPage extends StatelessWidget {
             Consumer(
               builder: (context, ref, child) {
                 return MyInputField(
+                  controller: _textEditingController,
                   hintText: "Search city",
                   prefixIcon: MySvg(Assets.icons.search),
                   onChanged: (value) {
@@ -73,6 +88,7 @@ class SelectCityPage extends StatelessWidget {
             return GestureDetector(
               onTap: () {
                 ref.read(selectionProvider.notifier).updateSelection(city: city.districtName);
+                ref.read(cityFilterStringProvider.notifier).state = '';
                 Navigator.of(context).pop();
               },
               child: Container(

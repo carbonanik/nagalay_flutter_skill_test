@@ -43,6 +43,7 @@ dependencies:
   latlong2: ^0.9.0
   http: ^1.1.2
   syncfusion_flutter_sliders: ^24.1.44
+  syncfusion_flutter_core: ^24.1.45
 
 dev_dependencies:
   flutter_test:

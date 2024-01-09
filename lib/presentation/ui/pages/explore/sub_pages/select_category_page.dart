@@ -8,8 +8,22 @@ import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_input_field.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_svg.dart';
 
-class SelectCategoryPage extends StatelessWidget {
+class SelectCategoryPage extends ConsumerStatefulWidget {
   const SelectCategoryPage({super.key});
+
+  @override
+  ConsumerState<SelectCategoryPage> createState() => _SelectCategoryPageState();
+}
+
+class _SelectCategoryPageState extends ConsumerState<SelectCategoryPage> {
+
+  final TextEditingController _textEditingController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _textEditingController.text = ref.read(categoriesFilterStringProvider);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +44,7 @@ class SelectCategoryPage extends StatelessWidget {
             Consumer(
               builder: (context, ref, child) {
                 return MyInputField(
+                  controller: _textEditingController,
                   hintText: "Search main category",
                   prefixIcon: MySvg(Assets.icons.category1),
                   onChanged: (value) {
@@ -76,6 +91,7 @@ class SelectCategoryPage extends StatelessWidget {
                       category: category.name,
                       categoryId: category.id,
                     );
+                ref.read(categoriesFilterStringProvider.notifier).state = '';
                 Navigator.of(context).pop();
               },
               child: Container(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nagalay_flutter_skill_test/gen/assets.gen.dart';
+import 'package:nagalay_flutter_skill_test/presentation/state/provider/order_provider.dart';
 import 'package:nagalay_flutter_skill_test/presentation/state/provider/selection_provider.dart';
 import 'package:nagalay_flutter_skill_test/presentation/state/provider/service_advertisement_provider.dart';
 import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
@@ -10,6 +11,11 @@ import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_dropdow
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_svg.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/local_component/floating_actions.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/local_component/item_view.dart';
+import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/sub_pages/fliter_pages.dart';
+import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/sub_pages/select_area_page.dart';
+import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/sub_pages/select_category_page.dart';
+import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/sub_pages/select_city_page.dart';
+import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/sub_pages/select_sub_category_page.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/sub_pages/selection_page.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/pages/map/map_view_page.dart';
 
@@ -21,7 +27,9 @@ class ExplorePage extends StatelessWidget {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActions(
-        onFilter: () {},
+        onFilter: () => Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => const FilterPage(),
+        )),
         onMap: () => Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => const MapViewPage(),
@@ -83,36 +91,40 @@ class ExplorePage extends StatelessWidget {
           ),
           const Spacer(),
           // drop down
-          MyDropdown(
-            items: const [
-              "Relevance",
-              "Newest",
-              "Oldest",
-            ],
-            value: 'Relevance',
-            onChanged: (value) {},
-          )
+          Consumer(builder: (context, ref, child) {
+            return MyDropdown(
+              items: ServiceAdvertisementOrder.values.map((e) => e.name).toList(),
+              value: ref.watch(serviceAdvertisementOrderProvider).name,
+              onChanged: (value) {
+                ref.read(serviceAdvertisementOrderProvider.notifier).state =
+                    ServiceAdvertisementOrder.values.firstWhere((element) => element.name == value);
+              },
+            );
+          })
         ],
       ),
     );
   }
 
   Widget _buildSelectedCategory() {
-    return Consumer(
-      builder: (context, ref, child)  {
-        final selection = ref.watch(selectionProvider);
-        return Column(
-          children: [
-            const Divider(
-              color: secondaryColor200,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 2),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  // category
-                  Row(
+    return Consumer(builder: (context, ref, child) {
+      final selection = ref.watch(selectionProvider);
+      return Column(
+        children: [
+          const Divider(
+            color: secondaryColor200,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 2),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                // category
+                GestureDetector(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const SelectCategoryPage(),
+                  )),
+                  child: Row(
                     children: [
                       SvgPicture.asset(Assets.icons.category1,
                           colorFilter: const ColorFilter.mode(
@@ -126,12 +138,17 @@ class ExplorePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 20,
-                    child: VerticalDivider(),
-                  ),
-                  // sub category
-                  Row(
+                ),
+                const SizedBox(
+                  height: 20,
+                  child: VerticalDivider(),
+                ),
+                // sub category
+                GestureDetector(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const SelectSubCategoryPage(),
+                  )),
+                  child: Row(
                     children: [
                       SvgPicture.asset(
                         Assets.icons.category2,
@@ -146,17 +163,17 @@ class ExplorePage extends StatelessWidget {
                         style: const TextStyle(color: textColor700, fontWeight: FontWeight.w600, fontSize: 16),
                       ),
                     ],
-                  )
-                ],
-              ),
+                  ),
+                )
+              ],
             ),
-            const Divider(
-              color: secondaryColor200,
-            ),
-          ],
-        );
-      }
-    );
+          ),
+          const Divider(
+            color: secondaryColor200,
+          ),
+        ],
+      );
+    });
   }
 
   Widget _buildSelectedLocation() {
@@ -166,30 +183,50 @@ class ExplorePage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         child: Row(
           children: [
-            SvgPicture.asset(Assets.icons.location,
-                colorFilter: const ColorFilter.mode(
-                  textColor700,
-                  BlendMode.srcIn,
-                )),
-            const SizedBox(width: 10),
-            Text(
-              selection.city ?? "City",
-              style: const TextStyle(
-                color: textColor700,
-                fontWeight: FontWeight.w600,
-                fontSize: 16,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const SelectCityPage(),
+              )),
+              child: Row(
+                children: [
+                  SvgPicture.asset(
+                    Assets.icons.location,
+                    colorFilter: const ColorFilter.mode(
+                      textColor700,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Text(
+                    selection.city ?? "City",
+                    style: const TextStyle(
+                      color: textColor700,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
               ),
             ),
             const Spacer(),
-            SvgPicture.asset(Assets.icons.location,
-                colorFilter: const ColorFilter.mode(
-                  textColor700,
-                  BlendMode.srcIn,
-                )),
-            const SizedBox(width: 10),
-            Text(
-              selection.area ?? "Area",
-              style: const TextStyle(color: textColor700, fontWeight: FontWeight.w600, fontSize: 16),
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const SelectAreaPage(),
+              )),
+              child: Row(
+                children: [
+                  SvgPicture.asset(Assets.icons.location,
+                      colorFilter: const ColorFilter.mode(
+                        textColor700,
+                        BlendMode.srcIn,
+                      )),
+                  const SizedBox(width: 10),
+                  Text(
+                    selection.area ?? "Area",
+                    style: const TextStyle(color: textColor700, fontWeight: FontWeight.w600, fontSize: 16),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -203,17 +240,17 @@ class ExplorePage extends StatelessWidget {
         clipBehavior: Clip.none,
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Consumer(builder: (context, ref, child) {
-          final serviceAdvertisementList = ref.watch(serviceAdvertisementProvider);
+          final advertisements = ref.watch(orderedServiceAdvertisementProvider);
 
           return ListView.builder(
-            itemCount: serviceAdvertisementList.advertisement.length,
+            itemCount: advertisements.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: EdgeInsets.only(
-                  bottom: index == (serviceAdvertisementList.advertisement.length - 1) ? 76 : 0,
+                  bottom: index == (advertisements.length - 1) ? 76 : 0,
                 ),
                 child: ItemView(
-                  advertisement: serviceAdvertisementList.advertisement[index],
+                  advertisement: advertisements[index],
                 ),
               );
             },

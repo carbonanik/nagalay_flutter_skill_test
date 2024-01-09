@@ -6,7 +6,12 @@ class MyDropdown extends StatelessWidget {
   final String value;
   final Function(String? value) onChanged;
 
-  const MyDropdown({required this.items, required this.value, required this.onChanged, super.key});
+  const MyDropdown({
+    required this.items,
+    required this.value,
+    required this.onChanged,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +28,12 @@ class MyDropdown extends StatelessWidget {
         icon: const Icon(Icons.keyboard_arrow_down),
         style: const TextStyle(
           color: textColor700,
-          // fontWeight: FontWeight.w600,
           fontSize: 14,
         ),
         underline: Container(),
         borderRadius: BorderRadius.circular(4),
-        elevation: 0,
+        elevation: 10,
+        dropdownColor: secondaryColor100,
         items: List.generate(
           items.length,
           (index) {

@@ -8,8 +8,21 @@ import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_input_field.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_svg.dart';
 
-class SelectSubCategoryPage extends StatelessWidget {
+class SelectSubCategoryPage extends ConsumerStatefulWidget {
   const SelectSubCategoryPage({super.key});
+
+  @override
+  ConsumerState<SelectSubCategoryPage> createState() => _SelectSubCategoryPageState();
+}
+
+class _SelectSubCategoryPageState extends ConsumerState<SelectSubCategoryPage> {
+  final TextEditingController _textEditingController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _textEditingController.text = ref.read(subCategoriesFilterStringProvider);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +38,9 @@ class SelectSubCategoryPage extends StatelessWidget {
         builder: (context, ref, child) {
           final selection = ref.watch(selectionProvider);
           if (selection.category == null) {
-            return const Center(child: Text("Please Select Category",
-              style: TextStyle(
-                color: textColor500,
-                fontSize: 16,
-                fontWeight: FontWeight.w600
-
-              )
-            ));
+            return const Center(
+                child: Text("Please Select Category",
+                    style: TextStyle(color: textColor500, fontSize: 16, fontWeight: FontWeight.w600)));
           }
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -41,6 +49,7 @@ class SelectSubCategoryPage extends StatelessWidget {
               children: [
                 const SizedBox(height: 8),
                 MyInputField(
+                  controller: _textEditingController,
                   hintText: "Search sub category",
                   prefixIcon: MySvg(Assets.icons.category2),
                   onChanged: (value) {
@@ -84,6 +93,7 @@ class SelectSubCategoryPage extends StatelessWidget {
             return GestureDetector(
               onTap: () {
                 ref.read(selectionProvider.notifier).updateSelection(subCategory: subCategory.name);
+                ref.read(subCategoriesFilterStringProvider.notifier).state = '';
                 Navigator.of(context).pop();
               },
               child: Container(

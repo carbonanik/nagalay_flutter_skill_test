@@ -7,8 +7,22 @@ import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_input_field.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_svg.dart';
 
-class SelectAreaPage extends StatelessWidget {
+class SelectAreaPage extends ConsumerStatefulWidget {
   const SelectAreaPage({super.key});
+
+  @override
+  ConsumerState<SelectAreaPage> createState() => _SelectAreaPageState();
+}
+
+class _SelectAreaPageState extends ConsumerState<SelectAreaPage> {
+
+  final TextEditingController _textEditingController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _textEditingController.text = ref.read(areaFilterStringProvider);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +43,7 @@ class SelectAreaPage extends StatelessWidget {
             Consumer(
               builder: (context, ref, child) {
                 return MyInputField(
+                  controller: _textEditingController,
                   hintText: "Search area",
                   prefixIcon: MySvg(Assets.icons.search),
                   onChanged: (value) {
@@ -72,6 +87,7 @@ class SelectAreaPage extends StatelessWidget {
             return GestureDetector(
               onTap: () {
                 ref.read(selectionProvider.notifier).updateSelection(area: area);
+                ref.read(areaFilterStringProvider.notifier).state = '';
                 Navigator.of(context).pop();
               },
               child: Container(

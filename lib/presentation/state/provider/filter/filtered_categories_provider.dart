@@ -4,7 +4,7 @@ import 'package:nagalay_flutter_skill_test/presentation/state/provider/categorie
 
 final categoriesFilterStringProvider = StateProvider<String>((ref) => '');
 final filteredCategoriesProvider = StateProvider<List<Category>>((ref) {
-  final categories = ref.watch(categoriesProvider).cities;
-  final cityFilterString = ref.watch(categoriesFilterStringProvider);
-  return categories.where((category) => category.name!.toLowerCase().contains(cityFilterString.toLowerCase())).toList();
+  final categories = ref.watch(categoriesProvider).categories;
+  final categoriesFilterString = ref.watch(categoriesFilterStringProvider);
+  return categories.where((category) => category.name!.toLowerCase().contains(categoriesFilterString.toLowerCase())).toList();
 });

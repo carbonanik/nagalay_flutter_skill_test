@@ -12,16 +12,16 @@ class CategoriesNotifier extends ChangeNotifier {
     getCategories();
   }
 
-  final List<Category> _cities = [];
+  final List<Category> _categories = [];
 
-  List<Category> get cities => UnmodifiableListView(_cities);
+  List<Category> get categories => UnmodifiableListView(_categories);
 
   Future<void> getCategories() async {
     final dataSource = CategoriesDataSource();
     final data = await dataSource.getCategories();
     if (data != null) {
-      _cities.clear();
-      _cities.addAll(data);
+      _categories.clear();
+      _categories.addAll(data);
       notifyListeners();
     }
   }

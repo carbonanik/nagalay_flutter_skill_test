@@ -1,23 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nagalay_flutter_skill_test/data/model/generated_models_for_advertisements.dart';
 import 'package:nagalay_flutter_skill_test/gen/assets.gen.dart';
+import 'package:nagalay_flutter_skill_test/presentation/state/provider/favorite_provider.dart';
 import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
 
 class ItemViewImageSlider extends StatefulWidget {
-  const ItemViewImageSlider({super.key});
+  final Advertisement advertisement;
+
+  const ItemViewImageSlider({required this.advertisement, super.key});
 
   @override
   State<ItemViewImageSlider> createState() => _ItemViewImageSliderState();
 }
 
 class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
-  final _list = [
+  final List<String> _list1 = [
     Assets.images.placeHolder1.path,
     Assets.images.placeholder2.path,
+    Assets.images.nagalayLogo1.path,
+  ];
+  final List<String> _list2 = [
+    Assets.images.placeholder2.path,
+    Assets.images.placeHolder1.path,
     Assets.images.nagalayLogo1.path,
   ];
 
   int _currentIndex = 0;
   final _pageController = PageController();
+
+  late final list = widget.advertisement.providerType == "SERVICE_PROVIDER" ? _list1 : _list2;
 
   @override
   void initState() {
@@ -50,7 +62,7 @@ class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
     return PageView(
       controller: _pageController,
       onPageChanged: _onPageChanged,
-      children: _list.map((e) => Image.asset(e)).toList(),
+      children: list.map((e) => Image.asset(e)).toList(),
     );
   }
 
@@ -61,7 +73,7 @@ class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
       right: 0,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: _list.map(
+        children: list.map(
           (e) {
             return Container(
               margin: const EdgeInsets.symmetric(horizontal: 2),
@@ -69,7 +81,7 @@ class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
               height: 8,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: _currentIndex == _list.indexOf(e) ? secondaryColor100 : textColor500,
+                color: _currentIndex == list.indexOf(e) ? secondaryColor100 : textColor500,
               ),
               // color: _currentIndex == _list.indexOf(e) ? textColor700 : secondaryColor200
             );
@@ -80,20 +92,31 @@ class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
   }
 
   Widget _buildRoundButtonRow() {
-    final icons = [Icons.favorite_outline, Icons.share, Icons.add];
     return Positioned(
       left: 8,
       top: 8,
-      child: Column(
-        children: [
-          _buildRoundButton(icons[0], () {}),
-          const SizedBox(height: 4),
-          _buildRoundButton(icons[1], () {}),
-          const SizedBox(height: 4),
-          _buildRoundButton(icons[2], () {}),
-          const SizedBox(height: 4),
-        ],
-      ),
+      child: Consumer(builder: (context, ref, child) {
+        final ids = ref.watch(favoriteProvider);
+        return Column(
+          children: [
+            _buildRoundButton(
+              ids.contains(widget.advertisement.id) ? Icons.favorite : Icons.favorite_outline,
+              () {
+                if (widget.advertisement.id != null) {
+                  ref.read(favoriteProvider.notifier).toggleFavorite(
+                        widget.advertisement.id!,
+                      );
+                }
+              },
+            ),
+            const SizedBox(height: 4),
+            _buildRoundButton(Icons.share, () {}),
+            const SizedBox(height: 4),
+            _buildRoundButton(Icons.add, () {}),
+            const SizedBox(height: 4),
+          ],
+        );
+      }),
     );
   }
 
@@ -104,7 +127,7 @@ class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
         height: 20,
         width: 20,
         padding: const EdgeInsets.all(4),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: secondaryColor100,
           shape: BoxShape.circle,
         ),

@@ -37,7 +37,7 @@ class ItemView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // image slider
-            const ItemViewImageSlider(),
+            ItemViewImageSlider(advertisement: advertisement),
             const SizedBox(width: 10),
             Expanded(child: _buildDetails()),
             // details
@@ -59,7 +59,6 @@ class ItemView extends StatelessWidget {
               const SizedBox(height: 8),
               // title
               Text(
-                // 'Learn Database engineering',
                 advertisement.title ?? 'Title not found',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
@@ -103,7 +102,6 @@ class ItemView extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      // 'Gazipur, Dhaka, Bangladesh',
                       advertisement.address?.location?.addressText ?? 'Location not found',
                       style: const TextStyle(
                         fontSize: 14,
@@ -157,7 +155,7 @@ class ItemView extends StatelessWidget {
               Text(
                 advertisement.providerType == "SERVICE_PROVIDER"
                     ? '\$${advertisement.price?.hourly}/h'
-                    : '\$${advertisement.price?.monthly}',
+                    : '\$${advertisement.price?.hourly}',
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
@@ -193,7 +191,6 @@ class ItemView extends StatelessWidget {
               ),
         const SizedBox(width: 10),
         Text(
-          // '20 Students',
           serviceProvider ? 'Service' : '${advertisement.studentCapacity} Students',
           style: const TextStyle(
             fontSize: 14,

@@ -22,13 +22,15 @@ class _MapViewPageState extends State<MapViewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          _buildMap(),
-          _buildSelectedAdvertisement(),
-          _buildFloatingTopSearchButton(context),
-          _buildFloatingBack(context),
-        ],
+      body: SafeArea(
+        child: Stack(
+          children: [
+            _buildMap(),
+            _buildSelectedAdvertisement(),
+            _buildFloatingTopSearchButton(context),
+            _buildFloatingBack(context),
+          ],
+        ),
       ),
     );
   }
