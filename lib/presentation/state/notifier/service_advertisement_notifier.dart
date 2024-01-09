@@ -1,11 +1,9 @@
 import 'dart:collection';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nagalay_flutter_skill_test/data/model/generated_models_for_advertisements.dart';
 import 'package:nagalay_flutter_skill_test/data/source/advertisements_data_source.dart';
-import 'package:nagalay_flutter_skill_test/presentation/state/provider/filter/group_filter_provider.dart';
 import 'package:nagalay_flutter_skill_test/presentation/state/provider/selection_provider.dart';
 
 class ServiceAdvertisementNotifier extends ChangeNotifier {
