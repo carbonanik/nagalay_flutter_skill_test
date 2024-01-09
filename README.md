@@ -56,3 +56,4 @@ This command will build and run the app on your connected device or emulator.
     ```bash
     flutter build apk
     ```
+  
