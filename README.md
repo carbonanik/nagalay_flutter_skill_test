@@ -15,7 +15,7 @@
 - 📄 **README.md**: Project documentation and information.
 
 ## Apk
-📦 **app-release.apk**   [(link)](https://drive.google.com/drive/folders/14q1MWhEbP9beakMv1ylj9uyKz1NQr7Fo?usp=sharing)
+📦 **app-release.apk**   [(link)](https://drive.google.com/file/d/1spwCDHuEx2cyVSzRinb9Lww82tUD4K-R/view?usp=drive_web)
 
 ## Getting Started
 
