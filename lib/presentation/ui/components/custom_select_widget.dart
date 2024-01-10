@@ -24,7 +24,7 @@ class CustomCheckWidget extends StatelessWidget {
         children: [
           Icon(
             (selected.contains(options[index])) ? Icons.check_box : Icons.check_box_outline_blank,
-            color: (selected.contains(options[index])) ? Theme.of(context).colorScheme.inversePrimary : Colors.grey,
+            color: (selected.contains(options[index])) ? Colors.green : Colors.grey,
           ),
           const SizedBox(width: 6),
           Text(

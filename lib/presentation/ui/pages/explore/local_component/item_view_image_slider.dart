@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nagalay_flutter_skill_test/data/links.dart';
 import 'package:nagalay_flutter_skill_test/data/model/generated_models_for_advertisements.dart';
 import 'package:nagalay_flutter_skill_test/gen/assets.gen.dart';
 import 'package:nagalay_flutter_skill_test/presentation/state/provider/favorite_provider.dart';
@@ -30,10 +31,18 @@ class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
   final _pageController = PageController();
 
   late final list = widget.advertisement.providerType == "SERVICE_PROVIDER" ? _list1 : _list2;
+  late List<String> liveImage;
+  late List<String> allImages;
 
   @override
   void initState() {
     super.initState();
+    final lp = widget.advertisement.galleryUploads?.map((e) => e.path).toList();
+
+    lp?.removeWhere((e) => e == null);
+
+    liveImage = lp?.cast<String>() ?? [];
+    allImages = liveImage + list;
   }
 
   @override
@@ -53,7 +62,11 @@ class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
       width: 110,
       height: 150,
       child: Stack(
-        children: [_buildPageView(), _buildBottomPageIndicator(), _buildRoundButtonRow()],
+        children: [
+          _buildPageView(),
+          _buildBottomPageIndicator(),
+          _buildRoundButtonRow(),
+        ],
       ),
     );
   }
@@ -61,8 +74,18 @@ class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
   PageView _buildPageView() {
     return PageView(
       controller: _pageController,
-      onPageChanged: _onPageChanged,
-      children: list.map((e) => Image.asset(e)).toList(),
+      onPageChanged: (value) {
+        _onPageChanged(value);
+      },
+      children: allImages.map((e) {
+        if (e.startsWith("assets/images/")) {
+          return Image.asset(e);
+        }
+        return Image.network(
+          imageBaseUrl + e,
+          fit: BoxFit.cover,
+        );
+      }).toList(),
     );
   }
 
@@ -73,7 +96,7 @@ class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
       right: 0,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: list.map(
+        children: allImages.indexed.map(
           (e) {
             return Container(
               margin: const EdgeInsets.symmetric(horizontal: 2),
@@ -81,7 +104,7 @@ class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
               height: 8,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: _currentIndex == list.indexOf(e) ? secondaryColor100 : textColor500,
+                color: _currentIndex == e.$1 ? secondaryColor100 : textColor500,
               ),
               // color: _currentIndex == _list.indexOf(e) ? textColor700 : secondaryColor200
             );
@@ -123,18 +146,20 @@ class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
   Widget _buildRoundButton(IconData icon, void Function() onTap) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        height: 20,
-        width: 20,
-        padding: const EdgeInsets.all(4),
-        decoration: const BoxDecoration(
-          color: secondaryColor100,
-          shape: BoxShape.circle,
-        ),
-        child: Icon(
-          icon,
-          color: textColor700,
-          size: 12,
+      child: InkWell(
+        child: Container(
+          height: 26,
+          width: 26,
+          padding: const EdgeInsets.all(4),
+          decoration: const BoxDecoration(
+            color: secondaryColor100,
+            shape: BoxShape.circle,
+          ),
+          child: Icon(
+            icon,
+            color: textColor700,
+            size: 17,
+          ),
         ),
       ),
     );

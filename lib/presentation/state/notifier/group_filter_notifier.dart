@@ -14,6 +14,8 @@ class GroupFilterNotifier extends StateNotifier<GroupFilter> {
             selectedPriceBy: "",
             selectedAvailability: [],
             priceRange: SfRangeValues(20, 2000),
+            selectedAdvertiseRating: "",
+            selectedSofolAmenities: [],
           ),
         );
 
@@ -27,6 +29,8 @@ class GroupFilterNotifier extends StateNotifier<GroupFilter> {
     String? selectedCategory2,
     String? selectedCategory3,
     String? selectedCategory4,
+    String? selectedAdvertiseRating,
+    List<String>? selectedSofolAmenities,
   }) {
     state = state.copyWith(
       selectedProviderType: selectedProviderType,
@@ -38,6 +42,8 @@ class GroupFilterNotifier extends StateNotifier<GroupFilter> {
       selectedCategory2: selectedCategory2,
       selectedCategory3: selectedCategory3,
       selectedCategory4: selectedCategory4,
+      selectedAdvertiseRating: selectedAdvertiseRating,
+      selectedSofolAmenities: selectedSofolAmenities,
     );
   }
 
@@ -48,6 +54,8 @@ class GroupFilterNotifier extends StateNotifier<GroupFilter> {
       selectedPriceBy: "",
       selectedAvailability: [],
       priceRange: SfRangeValues(20, 2000),
+      selectedAdvertiseRating: "",
+      selectedSofolAmenities: [],
     );
   }
 }

@@ -15,6 +15,8 @@ class GroupFilter {
   final String? selectedCategory2;
   final String? selectedCategory3;
   final String? selectedCategory4;
+  final String selectedAdvertiseRating;
+  final List<String> selectedSofolAmenities;
 
   const GroupFilter({
     required this.selectedProviderType,
@@ -26,6 +28,8 @@ class GroupFilter {
     this.selectedCategory2,
     this.selectedCategory3,
     this.selectedCategory4,
+    required this.selectedAdvertiseRating,
+    required this.selectedSofolAmenities,
   });
 
   GroupFilter copyWith({
@@ -38,6 +42,8 @@ class GroupFilter {
     String? selectedCategory2,
     String? selectedCategory3,
     String? selectedCategory4,
+    String? selectedAdvertiseRating,
+    List<String>? selectedSofolAmenities,
   }) {
     return GroupFilter(
       selectedProviderType: selectedProviderType ?? this.selectedProviderType,
@@ -49,6 +55,8 @@ class GroupFilter {
       selectedCategory2: selectedCategory2 ?? this.selectedCategory2,
       selectedCategory3: selectedCategory3 ?? this.selectedCategory3,
       selectedCategory4: selectedCategory4 ?? this.selectedCategory4,
+      selectedAdvertiseRating: selectedAdvertiseRating ?? this.selectedAdvertiseRating,
+      selectedSofolAmenities: selectedSofolAmenities ?? this.selectedSofolAmenities,
     );
   }
 
@@ -65,7 +73,9 @@ class GroupFilter {
         other.selectedCategory1 == selectedCategory1 &&
         other.selectedCategory2 == selectedCategory2 &&
         other.selectedCategory3 == selectedCategory3 &&
-        other.selectedCategory4 == selectedCategory4;
+        other.selectedCategory4 == selectedCategory4 &&
+        other.selectedAdvertiseRating == selectedAdvertiseRating &&
+        other.selectedSofolAmenities == selectedSofolAmenities;
   }
 
   @override
@@ -78,5 +88,7 @@ class GroupFilter {
       selectedCategory1.hashCode ^
       selectedCategory2.hashCode ^
       selectedCategory3.hashCode ^
-      selectedCategory4.hashCode;
+      selectedCategory4.hashCode ^
+      selectedAdvertiseRating.hashCode ^
+      selectedSofolAmenities.hashCode;
 }

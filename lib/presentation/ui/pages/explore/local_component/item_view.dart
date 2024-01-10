@@ -128,7 +128,7 @@ class ItemView extends StatelessWidget {
                   SvgPicture.asset(
                     Assets.icons.star,
                     colorFilter: ColorFilter.mode(
-                      Colors.orangeAccent.shade100,
+                      Colors.orangeAccent.shade200,
                       BlendMode.srcIn,
                     ),
                   ),

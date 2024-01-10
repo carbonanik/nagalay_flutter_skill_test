@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nagalay_flutter_skill_test/presentation/theme/theme_data.dart';
+import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/sub_pages/fliter_pages.dart';
+import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/sub_pages/sofol_amenities.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/pages/splash.dart';
 
 void main() {
@@ -16,8 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Nagalay Flutter Skill Test',
       debugShowCheckedModeBanner: false,
       theme: lightMode,
-      home:  const SplashPage(),
+      home: const SplashPage(),
     );
   }
 }
-

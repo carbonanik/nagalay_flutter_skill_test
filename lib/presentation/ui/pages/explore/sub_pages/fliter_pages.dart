@@ -5,9 +5,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nagalay_flutter_skill_test/presentation/state/provider/filter/group_filter_provider.dart';
 import 'package:nagalay_flutter_skill_test/presentation/theme/colors.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/components/my_button.dart';
-import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/local_component/custom_radio_widget.dart';
-import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/local_component/custom_select_widget.dart';
+import 'package:nagalay_flutter_skill_test/presentation/ui/components/custom_radio_widget.dart';
+import 'package:nagalay_flutter_skill_test/presentation/ui/components/custom_rating_radio_widget.dart';
+import 'package:nagalay_flutter_skill_test/presentation/ui/components/custom_select_widget.dart';
 import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/sub_pages/filter_select_category_page.dart';
+import 'package:nagalay_flutter_skill_test/presentation/ui/pages/explore/sub_pages/sofol_amenities.dart';
 import 'package:syncfusion_flutter_core/core.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
@@ -24,6 +26,7 @@ class _FilterPageState extends ConsumerState<FilterPage> {
   final servicePreferences = ["Both", "Online", "Offline"];
   final priceBy = ["Hourly", "Daily", "Weekly", "Monthly"];
   final availability = ["Any", "10h", "20h", "30h", "40h", "50h", "60h", "70h"];
+  final advertiseRatings = ["Any", "1", "2", "3", "4", "5"];
 
   // sf sliders
   final double minVal = 20;
@@ -49,6 +52,11 @@ class _FilterPageState extends ConsumerState<FilterPage> {
 
     _rangeController.start = price.start;
     _rangeController.end = price.end;
+
+    ref.listen(groupFilterProvider, (previous, next) {
+      _rangeController.start = next.priceRange.start;
+      _rangeController.end = next.priceRange.end;
+    });
 
     final width = MediaQuery.of(context).size.width;
     final count = width / 16;
@@ -174,7 +182,18 @@ class _FilterPageState extends ConsumerState<FilterPage> {
                   _buildTitle("Availability Per Week"),
                   const SizedBox(height: 20),
                   _buildAvailabilityRadio(ref),
+                  const SizedBox(height: 10),
+                  const Divider(color: secondaryColor200),
+                  const SizedBox(height: 10),
+                  _buildTitle("Advertise Rating"),
                   const SizedBox(height: 20),
+                  _buildAdvertiseRating(ref),
+                  const SizedBox(height: 10),
+                  const Divider(color: secondaryColor200),
+                  const SizedBox(height: 10),
+                  _buildSofolAmenities(ref),
+                  const SizedBox(height: 10),
+                  const Divider(color: secondaryColor200),
                 ],
               );
             }),
@@ -230,6 +249,19 @@ class _FilterPageState extends ConsumerState<FilterPage> {
       options: servicePreferences,
       value: ref.watch(groupFilterProvider).selectedServicePreference,
       spacing: 50,
+    );
+  }
+
+  Widget _buildAdvertiseRating(WidgetRef ref) {
+    return CustomRatingRadioWidget(
+      valueChanged: (value) {
+        ref.read(groupFilterProvider.notifier).updateFilter(
+              selectedAdvertiseRating: value,
+            );
+      },
+      options: advertiseRatings,
+      value: ref.watch(groupFilterProvider).selectedAdvertiseRating,
+      spacing: 14,
     );
   }
 
@@ -358,6 +390,19 @@ class _FilterPageState extends ConsumerState<FilterPage> {
           ),
         );
       }),
+    );
+  }
+
+  _buildSofolAmenities(WidgetRef ref) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => SofolAmenities()));
+      },
+      child: Row(children: [
+        _buildTitle("Advertise Rating"),
+        const Spacer(),
+        const Icon(Icons.add),
+      ]),
     );
   }
 }

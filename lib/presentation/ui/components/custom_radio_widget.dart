@@ -24,7 +24,7 @@ class CustomRadioWidget extends StatelessWidget {
         children: [
           Icon(
             (value == options[index]) ? Icons.radio_button_checked : Icons.radio_button_unchecked,
-            color: (value == options[index]) ? Theme.of(context).colorScheme.inversePrimary : Colors.grey,
+            color: (value == options[index]) ? Colors.green : Colors.grey,
           ),
           const SizedBox(width: 6),
           Text(
