@@ -3,11 +3,8 @@ import 'package:nagalay_flutter_skill_test/presentation/state/model/group_filter
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 class GroupFilterNotifier extends StateNotifier<GroupFilter> {
-  final Ref _ref;
-
   GroupFilterNotifier({required Ref ref})
-      : _ref = ref,
-        super(
+      : super(
           const GroupFilter(
             selectedProviderType: "",
             selectedServicePreference: "",

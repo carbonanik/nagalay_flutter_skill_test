@@ -6,9 +6,8 @@ import 'package:nagalay_flutter_skill_test/data/model/generated_model_for_cities
 import 'package:nagalay_flutter_skill_test/data/source/cities_data_source.dart';
 
 class CitiesNotifier extends ChangeNotifier {
-  final Ref _ref;
 
-  CitiesNotifier({required Ref ref}) : _ref = ref {
+  CitiesNotifier({required Ref ref}) {
     getCities();
   }
 

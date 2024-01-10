@@ -5,9 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nagalay_flutter_skill_test/data/source/areas_data_source.dart';
 
 class AreaNotifier extends ChangeNotifier {
-  final Ref _ref;
 
-  AreaNotifier({required Ref ref}) : _ref = ref {
+  AreaNotifier({required Ref ref}) {
     getCities();
   }
 

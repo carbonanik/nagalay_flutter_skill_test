@@ -6,9 +6,8 @@ import 'package:nagalay_flutter_skill_test/data/model/generated_model_for_catego
 import 'package:nagalay_flutter_skill_test/data/source/categories_data_source.dart';
 
 class CategoriesNotifier extends ChangeNotifier {
-  final Ref _ref;
 
-  CategoriesNotifier({required Ref ref}) : _ref = ref {
+  CategoriesNotifier({required Ref ref}) {
     getCategories();
   }
 

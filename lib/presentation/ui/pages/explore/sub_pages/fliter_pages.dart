@@ -394,15 +394,46 @@ class _FilterPageState extends ConsumerState<FilterPage> {
   }
 
   _buildSofolAmenities(WidgetRef ref) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => SofolAmenities()));
-      },
-      child: Row(children: [
-        _buildTitle("Advertise Rating"),
-        const Spacer(),
-        const Icon(Icons.add),
-      ]),
+    final aminities = ref.watch(groupFilterProvider).selectedSofolAmenities;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SofolAmenities()));
+          },
+          child: Row(children: [
+            _buildTitle("Sofol Amenities"),
+            const Spacer(),
+            const Icon(Icons.add),
+          ]),
+        ),
+        if (aminities.isNotEmpty) Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 10),
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: List.generate(
+                aminities.length,
+                (index) => Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    border: Border.all(
+                      color: secondaryColor200,
+                    )
+                  ),
+                  child: Text(
+                    aminities[index],
+                  ),
+                )
+              )
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
