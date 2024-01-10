@@ -37,12 +37,6 @@ class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
   @override
   void initState() {
     super.initState();
-    final lp = widget.advertisement.galleryUploads?.map((e) => e.path).toList();
-
-    lp?.removeWhere((e) => e == null);
-
-    liveImage = lp?.cast<String>() ?? [];
-    allImages = liveImage + list;
   }
 
   @override
@@ -58,6 +52,13 @@ class _ItemViewImageSliderState extends State<ItemViewImageSlider> {
 
   @override
   Widget build(BuildContext context) {
+    final lp = widget.advertisement.galleryUploads?.map((e) => e.path).toList();
+
+    lp?.removeWhere((e) => e == null);
+
+    liveImage = lp?.cast<String>() ?? [];
+    allImages = liveImage + list;
+
     return SizedBox(
       width: 110,
       height: 150,
